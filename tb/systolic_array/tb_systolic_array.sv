@@ -47,6 +47,9 @@ module tb_systolic_array;
     endtask
 
     initial begin
+        $dumpfile("tb_systolic_array.vcd");
+        $dumpvars(0, tb_systolic_array);
+
         $readmemh("tv_a.hex",   raw_a);
         $readmemh("tv_b.hex",   raw_b);
         $readmemh("gold_c.hex", raw_gold);
