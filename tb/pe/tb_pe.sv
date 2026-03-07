@@ -18,7 +18,7 @@ module tb_pe;
         .ACCUM_WIDTH(ACCUM_WIDTH)
     ) dut (
         .i_clk    (clk),
-        .rst_n    (rst_n),
+        .i_rst_n  (rst_n),
         .i_data   (data_in),
         .i_weight (weight_in),
         .i_psum   (psum_in),
