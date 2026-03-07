@@ -1,3 +1,19 @@
+# Sim
+sim_*/
+*.log
+*.jou
+*.pb
+xsim.dir/
+*.wdb
+.vec_*
+
+# test 
+*.hex
+
+# Python
+__pycache__/
+*.pyc
+
+# Other
 dump/
 .vscode/
-__pycache__/

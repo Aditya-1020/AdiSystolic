@@ -85,11 +85,11 @@ module tb_pe;
         $dumpfile("tb_pe.vcd");
         $dumpvars(0, tb_pe);
 
-        $readmemh("sim/pe/tv_data.hex",   raw_data);
-        $readmemh("sim/pe/tv_weight.hex", raw_weight);
-        $readmemh("sim/pe/tv_psum.hex",   raw_psum);
-        $readmemh("sim/pe/gold_mult.hex", raw_mult);
-        $readmemh("sim/pe/gold_mac.hex",  raw_mac);
+        $readmemh("tv_data.hex",   raw_data);
+        $readmemh("tv_weight.hex", raw_weight);
+        $readmemh("tv_psum.hex",   raw_psum);
+        $readmemh("gold_mult.hex", raw_mult);
+        $readmemh("gold_mac.hex",  raw_mac);
 
         // Cast to signed for downstream comparisons
         for (int i = 0; i < NUM_TESTS; i++) begin
