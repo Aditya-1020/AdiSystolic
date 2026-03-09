@@ -17,13 +17,15 @@ module tb_systolic_array;
     logic clk, rst_n;
     logic signed [N-1:0][DATA_WIDTH-1:0] data, weight;
     logic signed [N-1:0][N-1:0][ACCUM_WIDTH-1:0] result;
+    logic done;
 
     systolic_array #(.DATA_WIDTH(DATA_WIDTH), .ACCUM_WIDTH(ACCUM_WIDTH), .N(N)) dut (
         .i_clk    (clk),
         .i_rst_n  (rst_n),
         .i_data   (data),
         .i_weight (weight),
-        .o_result (result)
+        .o_result (result),
+        .o_done   (done)
     );
 
     initial clk = 0;
@@ -80,7 +82,7 @@ module tb_systolic_array;
             @(posedge clk); #1;
         end
 
-        repeat(PIPE_DELAY) @(posedge clk); #1; // wait pipeline drain
+        repeat(dut.o_done) @(posedge clk); #1; // wait pipeline drain
 
         for (int i = 0; i < N; i++)
             for (int j = 0; j < N; j++)
