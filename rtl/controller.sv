@@ -64,9 +64,13 @@ module controller #(
             end
 
             FEED: begin
+                next_bram_en = 1'b1;
                 next_valid = 1'b1;
+                next_addr_a = ADDR_WIDTH'(feed_cnt + 1'b1);
+                next_addr_b = ADDR_WIDTH'(feed_cnt + 1'b1);
                 next_feed_cnt = feed_cnt + 1'b1;
-                if (feed_cnt == N-1) begin
+                if (int'(feed_cnt) == N-1) begin
+                    next_bram_en = 1'b0;
                     next_state = WAIT;
                 end
             end
