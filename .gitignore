@@ -6,6 +6,7 @@ sim_*/
 xsim.dir/
 *.wdb
 .vec_*
+waveforms/
 
 # test 
 *.hex
@@ -18,3 +19,12 @@ venv/
 # Other
 dump/
 .vscode/
+
+# Vivado
+.Xil
+project_1/
+
+
+# Physical Design
+design/systolic_array/runs
+openlane2/

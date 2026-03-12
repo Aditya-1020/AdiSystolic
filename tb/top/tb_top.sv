@@ -34,13 +34,13 @@ module tb_top;
     logic done;
     logic controller_error, sa_error, error_detected;
 
-    top #(
+    top_fpga #(
         .DATA_WIDTH (DATA_WIDTH),
         .ACCUM_WIDTH(ACCUM_WIDTH),
         .N          (N),
         .DEPTH      (DEPTH),
         .ADDR_WIDTH (ADDR_WIDTH)
-     ) top (
+     ) top_fpga (
         .clk             (clk),
         .rst_n           (rst_n),
         .start           (start),
@@ -56,7 +56,7 @@ module tb_top;
         .sa_error        (sa_error),
         .error_detected  (error_detected)
     );
-
+    
     initial clk = 0;
     always #5 clk = ~clk;
 

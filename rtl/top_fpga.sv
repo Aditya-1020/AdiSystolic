@@ -1,6 +1,7 @@
+// Top module indegrating xilinx dual port bram
 timeunit 1ns; timeprecision 1ps;
 
-module top #(
+module top_fpga #(
     parameter int unsigned DATA_WIDTH = 8,
     parameter int unsigned ACCUM_WIDTH = 48,
     parameter int unsigned N = 16,
